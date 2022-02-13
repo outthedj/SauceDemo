@@ -11,10 +11,8 @@ public class SearchElements {
 
     WebDriver driver;
 
-
-
     @Test
-    public void searchMethodTest(){
+    public void searchMethodTest(){ // First part of home work
         WebElement classname = driver.findElement(By.className("shopping_cart_link"));
         WebElement tagname = driver.findElement(By.tagName("body"));
         WebElement linktext = driver.findElement(By.linkText("LinkedIn"));
