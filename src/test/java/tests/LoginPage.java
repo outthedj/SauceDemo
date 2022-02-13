@@ -11,7 +11,7 @@ public class LoginPage extends BaseTest {
     private static final String PASSWORD = "secret_sauce";
 
     @Test
-    public void isKeyboardArrowsWorksTest() {
+    public void loginTest() {
         driver.get(WebUrl.SAUCEDEMO_URL);
         driver.findElement(By.id("user-name")).sendKeys(USERNAME);
         driver.findElement(By.id("password")).sendKeys(PASSWORD);

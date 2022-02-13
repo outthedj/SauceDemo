@@ -17,7 +17,6 @@ public class SearchElements {
         WebElement tagname = driver.findElement(By.tagName("body"));
         WebElement linktext = driver.findElement(By.linkText("LinkedIn"));
         WebElement partiallinktext = driver.findElement(By.linkText("Linked"));
-
         WebElement xPathAttribute = driver.findElement(By.xpath("//div[@class='inventory_item_price']"));
         WebElement xPathText = driver.findElement(By.xpath("//div[text()='29.99']"));
         WebElement xPathPartialContainsAttribute = driver.findElement(By.xpath("//div[contains(@class,'pee')]"));
@@ -25,7 +24,6 @@ public class SearchElements {
         WebElement xPathAncestor = driver.findElement(By.xpath("//div[@id='inventory_container']/ancestor::div[@id='inventory_container']"));
         WebElement xPathParent = driver.findElement(By.xpath("//img/parent::button"));
         WebElement xPathAnd = driver.findElement(By.xpath("//input[@class='input_error form_input error' and @type='text']"));
-
         WebElement cssClass = driver.findElement(By.cssSelector(".submit-button"));
         WebElement cssId = driver.findElement(By.cssSelector("#user-name"));
         WebElement cssTag = driver.findElement(By.cssSelector("span"));
