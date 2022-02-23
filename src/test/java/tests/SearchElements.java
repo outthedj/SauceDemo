@@ -32,16 +32,6 @@ public class SearchElements {
         WebElement cssAttribute3 = driver.findElement(By.xpath("[class*=name]"));
         WebElement cssFirstChild = driver.findElement(By.cssSelector(".inventory_item:first-child"));
         WebElement cssNthChild = driver.findElement(By.cssSelector(".inventory_item:nth-child(3)"));
-
-
-
-
-
-
-
-
-
-
     }
 
 }
