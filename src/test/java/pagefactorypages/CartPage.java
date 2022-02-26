@@ -18,15 +18,15 @@ public class CartPage extends BasePage{
         super(driver);
     }
 
-    public void isNameOfItemCorrect(){
-        nameOfItem.getText();
-        String isNameCorrect = driver.findElement(By.xpath("//div[@class='inventory_item_name']")).getText();
-        Assert.assertEquals(isNameCorrect, "Sauce Labs Backpack");
+    public String isNameCorrect;
+
+    public String isNameOfItemCorrect(){
+        return isNameCorrect = driver.findElement(By.xpath("//div[@class='inventory_item_price']")).getText();
     }
 
-    public void isPriceOfItemCorrect(){
-        priceOfItem.getText();
-        String isPriceCorrect = driver.findElement(By.xpath("//div[@class='inventory_item_price']")).getText();
-        Assert.assertEquals(isPriceCorrect, "$29.99");
+    public String isPriceCorrect;
+
+    public String isPriceOfItemCorrect(){
+        return isPriceCorrect = driver.findElement(By.xpath("//div[@class='inventory_item_price']")).getText();
     }
 }
