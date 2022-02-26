@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pagefactorypages.CartPage;
@@ -25,6 +24,8 @@ public class ItemInCartTest extends BaseTest {
         inventoryPage.addToCartSauceLabsBackpack();
         inventoryPage.openShoppingCartpage();
         cartPage.isNameOfItemCorrect();
+        Assert.assertEquals(cartPage.isNameCorrect, "$29.99");
         cartPage.isPriceOfItemCorrect();
+        Assert.assertEquals(cartPage.isPriceCorrect, "$29.99");
     }
 }
