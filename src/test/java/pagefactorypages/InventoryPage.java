@@ -12,6 +12,9 @@ public class InventoryPage extends BasePage{
     @FindBy(className = "shopping_cart_link")
     private WebElement shoppingCartLink;
 
+    @FindBy(linkText = "LinkedIn")
+    private WebElement sauceLinkedInLogo;
+
     public InventoryPage(WebDriver driver) {
         super(driver);
     }
@@ -22,5 +25,9 @@ public class InventoryPage extends BasePage{
 
     public void openShoppingCartpage(){
         shoppingCartLink.click();
+    }
+
+    public void openLinkedIn(){
+        sauceLinkedInLogo.click();
     }
 }
