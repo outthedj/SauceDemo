@@ -23,9 +23,7 @@ public class LinkedInTest extends BaseTest{
         loginPage.usernameInput();
         loginPage.passwordInput();
         loginPage.clickLoginButton();
-
         inventoryPage.openLinkedIn();
-
         linkedInPage.newTabForLinkedin();
         Assert.assertTrue(linkedInPage.newTabForLinkedin());
     }
