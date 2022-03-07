@@ -20,19 +20,28 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void openLoginPage() {
+    public LoginPage openLoginPage() {
         driver.get(WebUrl.SAUCEDEMO_URL);
+        return this;
     }
 
-    public void usernameInput() {
+    @Override
+    public boolean isElementExist() {
+        return loginButton.isDisplayed();
+    }
+
+    public LoginPage usernameInput() {
         usernameInput.sendKeys("standard_user");
+        return this;
     }
 
-    public void passwordInput() {
+    public LoginPage passwordInput() {
         passwordInput.sendKeys("secret_sauce");
+        return this;
     }
 
-    public void clickLoginButton() {
+    public LoginPage clickLoginButton() {
         loginButton.click();
+        return this;
     }
 }

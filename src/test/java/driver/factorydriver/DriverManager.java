@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class DriverManager {
 
     protected WebDriver driver;
-    protected abstract void createDriver();
+    public abstract void createDriver();
 
     public WebDriver getDriver() {
         return driver;

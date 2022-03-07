@@ -21,6 +21,11 @@ public class LinkedInPage extends BasePage{
         super(driver);
     }
 
+    @Override
+    public boolean isElementExist() {
+        return linkedInLogo.isDisplayed();
+    }
+
     public boolean newTabForLinkedin() {
         ArrayList<String> newTabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(newTabs.get(1));
