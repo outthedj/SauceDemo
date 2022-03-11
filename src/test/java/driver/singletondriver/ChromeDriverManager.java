@@ -1,3 +1,4 @@
+/*
 package driver.singletondriver;
 
 import org.openqa.selenium.WebDriver;
@@ -47,3 +48,4 @@ public class ChromeDriverManager {
         driver.quit();
     }
 }
+*/
