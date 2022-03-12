@@ -14,8 +14,16 @@ public class CartPage extends BasePage{
     @FindBy(xpath = "//div[@class='inventory_item_name']")
     private WebElement priceOfItem;
 
+    @FindBy(id = "checkout")
+    private WebElement checkoutButton;
+
     public CartPage(WebDriver driver) {
         super(driver);
+    }
+
+    @Override
+    public boolean isElementExist() {
+        return checkoutButton.isDisplayed();
     }
 
     public String isNameCorrect;

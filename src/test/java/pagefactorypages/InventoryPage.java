@@ -15,19 +15,30 @@ public class InventoryPage extends BasePage{
     @FindBy(linkText = "LinkedIn")
     private WebElement sauceLinkedInLogo;
 
+    @FindBy(xpath = "//select[@data-test='product_sort_container']")
+    private WebElement sortDropDown;
+
     public InventoryPage(WebDriver driver) {
         super(driver);
     }
 
-    public void addToCartSauceLabsBackpack(){
+    @Override
+    public boolean isElementExist() {
+        return sortDropDown.isDisplayed();
+    }
+
+    public InventoryPage addToCartSauceLabsBackpack(){
         sauceLabsBackpack.click();
+        return this;
     }
 
-    public void openShoppingCartpage(){
+    public InventoryPage openShoppingCartpage(){
         shoppingCartLink.click();
+        return this;
     }
 
-    public void openLinkedIn(){
+    public InventoryPage openLinkedIn(){
         sauceLinkedInLogo.click();
+        return this;
     }
 }
