@@ -1,10 +1,16 @@
 package tests;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pagefactorypages.CartPage;
 import pagefactorypages.InventoryPage;
 import pagefactorypages.LoginPage;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class ItemInCartTest extends BaseTest {
 
@@ -13,7 +19,7 @@ public class ItemInCartTest extends BaseTest {
     CartPage cartPage;
 
     @Test
-    public void loginTest() {
+    public void loginTest() throws IOException {
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
         cartPage = new CartPage(driver);
@@ -26,6 +32,9 @@ public class ItemInCartTest extends BaseTest {
         cartPage.isNameOfItemCorrect();
         Assert.assertEquals(cartPage.isNameCorrect, "$29.99");
         cartPage.isPriceOfItemCorrect();
+        TakesScreenshot screenShot = ((TakesScreenshot) driver);
+        byte[] sourceFile = screenShot.getScreenshotAs(OutputType.BYTES);
+        Files.write(Paths.get("src/test/resources/screenshot.png"), sourceFile);
         Assert.assertEquals(cartPage.isPriceCorrect, "$29.99");
     }
 }
