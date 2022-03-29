@@ -1,5 +1,6 @@
 package tests;
 
+import com.sun.net.httpserver.Authenticator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
@@ -7,6 +8,7 @@ import org.testng.annotations.Test;
 import pagefactorypages.CartPage;
 import pagefactorypages.InventoryPage;
 import pagefactorypages.LoginPage;
+import utilities.Retry;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,7 +20,7 @@ public class ItemInCartTest extends BaseTest {
     InventoryPage inventoryPage;
     CartPage cartPage;
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void loginTest() throws IOException {
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);

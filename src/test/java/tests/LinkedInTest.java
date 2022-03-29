@@ -9,6 +9,7 @@ import pagefactorypages.CartPage;
 import pagefactorypages.InventoryPage;
 import pagefactorypages.LinkedInPage;
 import pagefactorypages.LoginPage;
+import utilities.Retry;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,7 +21,7 @@ public class LinkedInTest extends BaseTest{
     InventoryPage inventoryPage;
     LinkedInPage linkedInPage;
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void loginTest() throws IOException {
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
