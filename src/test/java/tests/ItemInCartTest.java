@@ -1,6 +1,8 @@
 package tests;
 
 import com.sun.net.httpserver.Authenticator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
@@ -19,17 +21,25 @@ public class ItemInCartTest extends BaseTest {
     LoginPage loginPage;
     InventoryPage inventoryPage;
     CartPage cartPage;
+    private static final Logger LOGGER = LogManager.getLogger(ItemInCartTest.class.getName());
 
     @Test(retryAnalyzer = Retry.class)
     public void loginTest() throws IOException {
+        LOGGER.info("Starting");
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
         cartPage = new CartPage(driver);
+        LOGGER.info("Opening " + loginPage.getClass().getName() + "page");
         loginPage.openLoginPage();
+        LOGGER.info("Inputting username");
         loginPage.usernameInput();
+        LOGGER.info("Inputting password");
         loginPage.passwordInput();
+        LOGGER.info("Clicking login button");
         loginPage.clickLoginButton();
+        LOGGER.info("Adding item to cart");
         inventoryPage.addToCartSauceLabsBackpack();
+        LOGGER.info("Opening shopping cart");
         inventoryPage.openShoppingCartpage();
         cartPage.isNameOfItemCorrect();
         Assert.assertEquals(cartPage.isNameCorrect, "$29.99");
