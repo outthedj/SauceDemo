@@ -1,6 +1,7 @@
 package tests;
 
 import com.sun.net.httpserver.Authenticator;
+import io.qameta.allure.Description;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -24,6 +25,7 @@ public class ItemInCartTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(ItemInCartTest.class.getName());
 
     @Test(retryAnalyzer = Retry.class)
+    @Description("Check if price equals $29.99")
     public void loginTest() throws IOException {
         LOGGER.info("Starting");
         loginPage = new LoginPage(driver);
