@@ -1,5 +1,6 @@
 package pagefactorypages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,20 +24,23 @@ public class InventoryPage extends BasePage{
     }
 
     @Override
+    @Step("Checking is dropdown displayed")
     public boolean isElementExist() {
         return sortDropDown.isDisplayed();
     }
-
+    @Step("Adding item to cart")
     public InventoryPage addToCartSauceLabsBackpack(){
         sauceLabsBackpack.click();
         return this;
     }
 
+    @Step("Opening shopping cart page")
     public InventoryPage openShoppingCartpage(){
         shoppingCartLink.click();
         return this;
     }
 
+    @Step("Opening LinkedIn page")
     public InventoryPage openLinkedIn(){
         sauceLinkedInLogo.click();
         return this;

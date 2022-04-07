@@ -1,5 +1,6 @@
 package pagefactorypages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,10 +23,12 @@ public class LinkedInPage extends BasePage{
     }
 
     @Override
+    @Step("Checking is LinkedIn logo displayed")
     public boolean isElementExist() {
         return linkedInLogo.isDisplayed();
     }
 
+    @Step("Switching to LinkedIn tab")
     public boolean newTabForLinkedin() {
         ArrayList<String> newTabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(newTabs.get(1));

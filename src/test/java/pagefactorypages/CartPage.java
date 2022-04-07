@@ -1,5 +1,6 @@
 package pagefactorypages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,18 +23,21 @@ public class CartPage extends BasePage{
     }
 
     @Override
+    @Step("Checking is checkout button displayed")
     public boolean isElementExist() {
         return checkoutButton.isDisplayed();
     }
 
     public String isNameCorrect;
 
+    @Step("Comparing name of item")
     public String isNameOfItemCorrect(){
         return isNameCorrect = driver.findElement(By.xpath("//div[@class='inventory_item_price']")).getText();
     }
 
     public String isPriceCorrect;
 
+    @Step("Comparing price of item")
     public String isPriceOfItemCorrect(){
         return isPriceCorrect = driver.findElement(By.xpath("//div[@class='inventory_item_price']")).getText();
     }

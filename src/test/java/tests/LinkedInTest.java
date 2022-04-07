@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -25,6 +26,7 @@ public class LinkedInTest extends BaseTest{
     private static final Logger LOGGER = LogManager.getLogger(LinkedInTest.class.getName());
 
     @Test(retryAnalyzer = Retry.class)
+    @Description("Check if LinkedIn page is opened")
     public void loginTest() throws IOException {
         LOGGER.info("Starting");
         loginPage = new LoginPage(driver);
